@@ -16,12 +16,13 @@ body{
     min-height: 100vh;
     background-color: hsl(225, 100%, 94%);
     overflow-x: hidden;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .pattern-box{
     position: absolute;
     top: 0;
+    left: 0;
     width: 100vw;
     background-image: url(./images/pattern-background-desktop.svg);
     height: 100vh;
@@ -112,3 +113,20 @@ body{
 /* - Very pale blue: hsl(225, 100%, 98%) */
 /* - Desaturated blue: hsl(224, 23%, 55%) */
 /* - Dark blue: hsl(223, 47%, 23%) */
+
+@media screen and (max-width: 375px) {
+    html{
+        font-size: 52%;
+    }
+    body{
+        padding: 1rem;
+    }
+    .order-summary-card{
+        max-width: 100%;
+    }
+
+    .card-body{
+        padding: 2rem;
+    }
+    
+}
