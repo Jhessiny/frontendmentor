@@ -38,3 +38,28 @@ section{
 .section-text{
     color: hsl(303, 10%, 53%)
 }
+
+.top-right{
+    margin-left: 4rem;
+    padding: 2rem;
+}
+
+.rating{
+    display: flex;
+    background-color: hsl(300, 24%, 96%);
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+}
+
+.rating-stars{
+    margin-right: 1.5rem;
+}
+
+.rt1{
+    transform: translateX(-4rem);
+}
+
+.rt3{
+    transform: translateX(4rem);
+}
