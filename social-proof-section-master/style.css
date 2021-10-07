@@ -16,7 +16,9 @@ body{
 }
 
 section{
-    padding: 12rem;
+    padding: 10rem 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
     background-image: url(./images/bg-pattern-top-desktop.svg);
     height: 100vh;
     background-repeat: no-repeat;
@@ -34,7 +36,7 @@ section{
 .section-title{
     color: hsl(300, 43%, 22%);
     font-size: 5rem;
-    width: 50rem;
+    max-width: 50rem;
     margin-bottom: 1rem;
 
 }
@@ -109,4 +111,42 @@ section{
     margin-top: 2rem;
     font-size: 1.3rem;
     line-height: 2.1rem;
+}
+
+@media screen and (max-width: 950px) {
+    .top{
+        flex-direction: column;
+    }
+
+    .top-left, .top-right{
+        max-width: 60rem;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .rating{
+        flex-direction: column;
+    }
+
+    .rating-stars{
+        margin-bottom: 1rem;
+    }
+
+    .rt1{
+        transform: translateX(0);
+    }
+    
+    .rt3{
+        transform: translateX(0);
+    }
+
+    .bottom{
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        max-width: 60rem;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
 }
