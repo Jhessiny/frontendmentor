@@ -158,7 +158,7 @@ img {
   transform: translateX(100%);
   display: flex;
   width: 14.25vw;
-  height: 10rem;
+  height: 5vw;
   backface-visibility: hidden;
 }
 
@@ -237,19 +237,10 @@ img {
   .room__item--1 {
     grid-column: 1 / -1;
   }
-  .slide__image--1 {
-    background-image: url("./images/mobile-image-hero-1.jpg");
-  }
-
-  .slide__image--2 {
-    background-image: url("./images/mobile-image-hero-2.jpg");
-  }
-
-  .slide__image--3 {
-    background-image: url("./images/mobile-image-hero-3.jpg");
-  }
   .slide__actions {
     transform: translateX(0%);
+    height: 10vw;
+    width: 20vw;
   }
   .room__item--2 {
     grid-column: 1 / -1;
@@ -298,6 +289,17 @@ img {
   .room {
     grid-template-rows: 55rem max-content max-content max-content max-content;
     grid-row-gap: 0;
+  }
+  .slide__image--1 {
+    background-image: url("./images/mobile-image-hero-1.jpg");
+  }
+
+  .slide__image--2 {
+    background-image: url("./images/mobile-image-hero-2.jpg");
+  }
+
+  .slide__image--3 {
+    background-image: url("./images/mobile-image-hero-3.jpg");
   }
   .title-primary {
     font-size: 3rem;
