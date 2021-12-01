@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Room homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        display: none;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">room</h1>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"> home </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"> shop </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"> about </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"> contact </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="room">
+      <div class="room__item room__item--1">
+        <div class="slide__images">
+          <div class="slide__image slide__image--1 slide__image--active"></div>
+          <div class="slide__image slide__image--2"></div>
+          <div class="slide__image slide__image--3"></div>
+        </div>
+
+        <div class="slide__actions">
+          <button class="slide__prev">
+            <img src="./images/icon-angle-left.svg" alt="" />
+          </button>
+          <button class="slide__next">
+            <img src="./images/icon-angle-right.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="room__item room__item--2">
+        <h1 class="title-primary">Discover innovative ways to decorate</h1>
+        <p class="room__text">
+          We provide unmatched quality, comfort, and style for property owners
+          across the country. Our experts combine form and function in bringing
+          your vision to life. Create a room in your own style with our
+          collection and make your property a reflection of you and what you
+          love property a reflection of you and what you love.
+        </p>
+        <a class="shop-button" href="#"
+          >Shop Now
+          <img src="./images/icon-arrow.svg" alt="" />
+        </a>
+      </div>
+      <div class="room__item room__item--3">
+        <img src="./images/image-about-dark.jpg" alt="" />
+      </div>
+      <div class="room__item room__item--4">
+        <h2 class="title-secondary">About our furniture</h2>
+
+        <p class="room__text">
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything
+          in between. Product specialists are available to help you create your
+          dream space.
+        </p>
+      </div>
+      <div class="room__item room__item--5">
+        <img src="./images/image-about-light.jpg" alt="" />
+      </div>
+    </section>
+
+    <!-- We are available all across the globe With stores
+    all over the world, it's easy for you to find furniture for your home or
+    place of business. Locally, we’re in most major cities throughout the
+    country. Find the branch nearest you using our store locator. Any questions?
+    Don't hesitate to contact us today. Shop now Manufactured with the best
+    materials Our modern furniture store provide a high level of quality. Our
+    company has invested in advanced technology to ensure that every product is
+    made as perfect and as consistent as possible. With three decades of
+    experience in this industry, we understand what customers want for their
+    home and office. Shop now -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
