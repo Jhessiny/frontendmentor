@@ -58,6 +58,11 @@ img {
   z-index: 10;
 }
 
+.navigation__line,
+.navigation__checkbox {
+  display: none;
+}
+
 .navigation {
   width: 70%;
 }
@@ -278,14 +283,97 @@ img {
   .header {
     justify-content: center;
     padding: 0;
-    padding-top: 5.5rem;
+    padding-top: 4rem;
   }
   .logo {
     font-size: 3.5rem;
   }
   .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+    background-color: var(--color-white);
+    color: var(--color-darker-gray);
+    height: 20vw;
+    width: 100vw;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 4rem;
+    font-weight: bold;
+  }
+
+  .navigation__list {
+    width: 90%;
+  }
+
+  .header label {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    margin: 5.5rem 0 0 3rem;
+    cursor: pointer;
+    width: 3rem;
+    height: 23px;
+    z-index: 10;
+  }
+
+  .navigation__line {
+    display: inline-block;
+    position: absolute;
+    width: 3rem;
+    border-radius: 3px;
+    height: 2px;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+  }
+
+  .navigation__line::after,
+  .navigation__line::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 3rem;
+    border-radius: 3px;
+    height: 2px;
+    top: -1rem;
+    background-color: var(--color-white);
+  }
+
+  .navigation__line:after {
+    top: 1rem;
+  }
+
+  .navigation__checkbox {
     display: none;
   }
+
+  .navigation__checkbox:checked + .navigation {
+    transform: translate(0%);
+  }
+  .navigation__checkbox:checked ~ label .navigation__line {
+    animation: menuLabelChange 1s;
+  }
+
+  .navigation__checkbox:checked ~ label .navigation__line::after,
+  .navigation__checkbox:checked ~ label .navigation__line::before {
+    background-color: var(--color-dark-gray);
+  }
+
+  .navigation__checkbox:checked ~ label .navigation__line::after {
+    top: -1rem;
+    transform: rotate(45deg);
+  }
+
+  .navigation__checkbox:checked ~ label .navigation__line::before {
+    top: -1rem;
+    transform: rotate(135deg);
+  }
+
   .room {
     grid-template-rows: 55rem max-content max-content max-content max-content;
     grid-row-gap: 0;
@@ -318,5 +406,17 @@ img {
   }
   .room__item--5 {
     grid-column: 1 / -1;
+  }
+}
+
+@keyframes menuLabelChange {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
