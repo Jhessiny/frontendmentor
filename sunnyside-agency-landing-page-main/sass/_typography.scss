@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.8rem;
+}
+
+header {
+  text-align: center;
+}
+
+.title {
+  &--primary {
+    font-family: "Fraunces", serif;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2rem;
+    color: var(--color-white);
+
+    @media only screen and (max-width: 400px) {
+      font-size: 4.5rem;
+      // letter-spacing: .6rem;
+    }
+  }
+
+  &--secondary {
+    font-family: "Fraunces", serif;
+    font-size: 4rem;
+    color: var(--color-very-dark-desaturated-blue);
+    line-height: 1.2;
+  }
+
+  &--tertiary {
+    font-family: "Fraunces", serif;
+    font-size: 2.5rem;
+    color: var(--color-dark-desaturated-cyan);
+
+    &:nth-of-type(2) {
+      color: var(--color-dark-blue);
+    }
+  }
+
+  &--fourth {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    letter-spacing: 0.6rem;
+    // font-size: 1.8rem;
+    color: var(--color-grayish-blue);
+    font-weight: 900;
+  }
+}
+
+.text {
+  &--normal {
+    font-size: 1.8rem;
+    color: var(--color-very-dark-grayish-blue);
+  }
+
+  &--blue {
+    color: var(--color-dark-blue);
+  }
+
+  &--green {
+    color: var(--color-dark-desaturated-cyan);
+  }
+  &--sm {
+    font-size: 1.6rem;
+    color: var(--color-grayish-blue);
+  }
+}
+
+.content-box {
+  &--center {
+    text-align: center;
+    max-width: 40rem;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+}
+
+

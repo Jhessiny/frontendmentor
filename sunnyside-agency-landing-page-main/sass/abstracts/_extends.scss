@@ -1,0 +1,13 @@
+%half-grid__images-center {
+  background-size: cover;
+  background-position: center;
+  height: 58rem;
+}
+
+%half-grid__images-top {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  height: 58rem;
+}
