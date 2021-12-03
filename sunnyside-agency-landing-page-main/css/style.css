@@ -78,7 +78,8 @@ header {
   color: var(--color-white); }
   @media only screen and (max-width: 400px) {
     .title--primary {
-      font-size: 4.5rem; } }
+      font-size: 4.5rem;
+      line-height: 1.5; } }
 
 .title--secondary {
   font-family: "Fraunces", serif;
@@ -203,7 +204,8 @@ header {
 .header {
   background-image: url(../images/desktop/image-header.jpg);
   background-size: cover;
-  background-position: bottom; }
+  background-position: bottom;
+  position: relative; }
   .header__logo {
     filter: invert(100%) sepia(3%) saturate(487%) hue-rotate(221deg) brightness(118%) contrast(100%); }
   .header__arrow {
@@ -213,7 +215,8 @@ header {
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 4rem 3rem; }
+  padding: 4rem 3rem;
+  position: relative; }
   .navigation__list {
     display: flex;
     color: var(--color-white);
@@ -221,17 +224,88 @@ header {
     justify-content: space-around; }
     @media only screen and (max-width: 900px) {
       .navigation__list {
-        display: none; } }
-  .navigation__item {
-    padding: 1rem 3rem; }
-    .navigation__item:last-child {
-      color: #000;
-      text-transform: uppercase;
-      background-color: var(--color-white);
-      font-family: "Fraunces", serif;
-      border-radius: 100px;
-      font-size: 1.4rem;
-      line-height: 2; }
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        right: 3rem;
+        flex-direction: column;
+        max-width: 40rem;
+        background-color: var(--color-white);
+        color: var(--color-very-dark-grayish-blue);
+        padding: 2rem 0;
+        transition: all 0.3s; }
+        .navigation__list::before {
+          position: absolute;
+          top: 0;
+          right: -4px;
+          transform: translateY(-50%) rotate(45deg);
+          content: "";
+          display: inline-block;
+          border-top: 25px solid transparent;
+          border-bottom: 25px solid transparent;
+          border-left: 25px solid #fff; } }
+  @media only screen and (max-width: 900px) {
+    .navigation__item:not(:last-child) {
+      margin-bottom: 1rem; } }
+  .navigation__item:last-child .navigation__link {
+    color: #000;
+    text-transform: uppercase;
+    background-color: var(--color-white);
+    font-family: "Fraunces", serif;
+    border-radius: 100px;
+    font-size: 1.4rem;
+    line-height: 2; }
+    @media only screen and (max-width: 900px) {
+      .navigation__item:last-child .navigation__link {
+        background-color: var(--color-bellow); }
+        .navigation__item:last-child .navigation__link:not(:last-child) {
+          margin-bottom: 2rem; } }
+  .navigation__link {
+    display: inline-block;
+    padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 900px) {
+      .navigation__link {
+        padding: 1rem 2.5rem; } }
+  .navigation__hamburger {
+    display: none; }
+    @media only screen and (max-width: 900px) {
+      .navigation__hamburger {
+        z-index: 10;
+        display: block;
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .navigation__hamburger span {
+          position: absolute;
+          width: 3.5rem;
+          height: 2px;
+          background-color: rgba(255, 255, 255, 0.6);
+          border-radius: 10px; }
+          .navigation__hamburger span::after, .navigation__hamburger span::before {
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            content: "";
+            display: inline-block;
+            width: 3.5rem;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px; }
+          .navigation__hamburger span::after {
+            top: 1rem; } }
+  .navigation__checkbox {
+    display: none; }
+    @media only screen and (max-width: 900px) {
+      .navigation__checkbox:checked + .navigation__list {
+        visibility: visible;
+        pointer-events: all;
+        opacity: 1; } }
 
 .grid__item--2, .grid__item--5 {
   display: flex;

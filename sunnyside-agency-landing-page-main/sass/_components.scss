@@ -2,6 +2,7 @@
   background-image: url(../images/desktop/image-header.jpg);
   background-size: cover;
   background-position: bottom;
+  position: relative;
 
   &__logo {
     filter: invert(100%) sepia(3%) saturate(487%) hue-rotate(221deg)
@@ -18,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   padding: 4rem 3rem;
+  position: relative;
 
   &__list {
     display: flex;
@@ -26,14 +28,42 @@
     justify-content: space-around;
 
     @media only screen and (max-width: 900px) {
-      display: none;
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      right: 3rem;
+      flex-direction: column;
+      max-width: 40rem;
+      background-color: var(--color-white);
+      color: var(--color-very-dark-grayish-blue);
+      padding: 2rem 0;
+      transition: all 0.3s;
+
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: -4px;
+        transform: translateY(-50%) rotate(45deg);
+        content: "";
+        display: inline-block;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 25px solid #fff;
+      }
     }
   }
 
   &__item {
-    padding: 1rem 3rem;
+    @media only screen and (max-width: 900px) {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
 
-    &:last-child {
+    &:last-child .navigation__link {
       color: #000;
       text-transform: uppercase;
       background-color: var(--color-white);
@@ -41,6 +71,74 @@
       border-radius: 100px;
       font-size: 1.4rem;
       line-height: 2;
+
+      @media only screen and (max-width: 900px) {
+        background-color: var(--color-bellow);
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: 900px) {
+      padding: 1rem 2.5rem;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+
+    @media only screen and (max-width: 900px) {
+      z-index: 10;
+      display: block;
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        position: absolute;
+        width: 3.5rem;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+
+        &::after,
+        &::before {
+          position: absolute;
+          top: -1rem;
+          left: 0;
+          content: "";
+          display: inline-block;
+          width: 3.5rem;
+          height: 2px;
+          background-color: rgba(255, 255, 255, 0.6);
+          border-radius: 10px;
+        }
+        &::after {
+          top: 1rem;
+        }
+      }
+    }
+  }
+  &__checkbox {
+    display: none;
+
+    @media only screen and (max-width: 900px) {
+      &:checked + .navigation__list {
+        visibility: visible;
+        pointer-events: all;
+        opacity: 1;
+      }
     }
   }
 }
