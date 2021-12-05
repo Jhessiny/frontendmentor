@@ -1,0 +1,18 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
+  grid-template-rows: 75vh 85vh max-content min-content;
+}
+
+.header {
+  grid-column: 1/-1;
+}
+
+.about,
+.products {
+  grid-column: 2/6;
+}
+
+.footer {
+  grid-column: 1/-1;
+}
