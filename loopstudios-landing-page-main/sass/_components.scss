@@ -4,8 +4,12 @@
   background-repeat: no-repeat;
   background-position: right;
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(
+      4rem,
+      1fr
+    );
   grid-template-rows: 26vh auto;
+  min-height: 75vh;
 
   &-nav {
     width: 100%;
@@ -17,6 +21,9 @@
 
     &__list {
       display: flex;
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
     }
 
     &__link {
@@ -33,28 +40,59 @@
     height: min-content;
     padding: 3rem 4rem;
     min-width: 66rem;
+
+    @media only screen and (max-width: 650px) {
+      grid-column: 2/6;
+      min-width: auto;
+      width: 100%;
+    }
   }
 }
 
 .about {
   position: relative;
   margin: 12rem 0;
+  min-height: 40rem;
+
+  @media only screen and (max-width: 850px) {
+    width: 100%;
+    min-height: auto;
+  }
 
   &__img {
     display: block;
-    width: 65%;
+    width: 70%;
     height: 100%;
     object-fit: cover;
+
+    @media only screen and (max-width: 1050px) {
+      width: 75%;
+    }
+
+    @media only screen and (max-width: 850px) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__content {
     position: absolute;
     bottom: 0;
-    left: 51%;
-    width: 60%;
+    left: 55%;
+    width: 45%;
     align-self: flex-end;
     background-color: var(--color-white);
-    padding: 10rem 10rem 0 10rem;
+    padding: 10rem 0 0 10rem;
+
+    @media only screen and (max-width: 1200px) {
+      padding: 7rem 0 0 7rem;
+    }
+    @media only screen and (max-width: 850px) {
+      width: 100%;
+      position: relative;
+      left: 0;
+      padding: 6rem 3rem 0 3rem;
+    }
   }
 }
 
@@ -83,6 +121,27 @@
     grid-gap: 4rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 52rem 52rem;
+
+    @media only screen and (max-width: 1340px) {
+      grid-gap: 2rem;
+    }
+
+    @media only screen and (max-width: 1150px) {
+      grid-gap: 1.5rem;
+    }
+
+    @media only screen and (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 64rem 64rem 64rem;
+      grid-gap: 4rem;
+    }
+
+    @media only screen and (max-width: 550px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 25rem);
+      grid-gap: 3rem;
+      
+    }
   }
 
   &__item {
@@ -94,6 +153,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media only screen and (max-width: 550px) {
+     object-position: top;
+      
+    }
   }
 
   &__caption {
@@ -109,6 +173,9 @@
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.6)
     );
+    @media only screen and (max-width: 1280px) {
+      padding: 3rem;
+    }
   }
 }
 
@@ -116,21 +183,46 @@
   background-color: var(--color-black);
   color: var(--color-white);
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(
+      4rem,
+      1fr
+    );
   align-content: center;
   row-gap: 2.5rem;
   padding: 4rem 0;
 
+  @media only screen and (max-width: 700px) {
+    justify-items: center;
+    row-gap: 1rem;
+  }
+
   &__logo {
     grid-column: 2/4;
+    order: 1;
+
+    @media only screen and (max-width: 700px) {
+      grid-column: 2/6;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &-nav {
     grid-column: 2/4;
     display: flex;
+    order: 3;
+
+    @media only screen and (max-width: 700px) {
+      order: 2;
+      margin-bottom: 4rem;
+    }
 
     &__item:not(:last-child) {
       margin-right: 3rem;
+
+      @media only screen and (max-width: 700px) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
     }
 
     &__link {
@@ -138,12 +230,24 @@
       color: var(--color-white);
       font-weight: bold;
     }
+
+    @media only screen and (max-width: 700px) {
+      grid-column: 2/6;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   &__text {
     grid-column: 4/6;
     text-align: end;
     color: var(--color-dark-gray);
+    order: 4;
+
+    @media only screen and (max-width: 700px) {
+      grid-column: 2/6;
+      text-align: center;
+    }
   }
 }
 
@@ -151,6 +255,15 @@
   grid-column: 4/6;
   display: flex;
   justify-content: flex-end;
+
+  @media only screen and (max-width: 700px) {
+    order: 3;
+  }
+
+  @media only screen and (max-width: 700px) {
+    grid-column: 2/6;
+    justify-content: center;
+  }
 
   &__item {
     padding: 0 0.8rem;

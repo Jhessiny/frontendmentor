@@ -1,7 +1,10 @@
 body {
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
-  grid-template-rows: 75vh 85vh max-content min-content;
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(
+      4rem,
+      1fr
+    );
+  grid-template-rows: 75vh min-content max-content min-content;
 }
 
 .header {
@@ -16,3 +19,7 @@ body {
 .footer {
   grid-column: 1/-1;
 }
+
+// @media screen only and (max-width: 900px){
+  
+// }

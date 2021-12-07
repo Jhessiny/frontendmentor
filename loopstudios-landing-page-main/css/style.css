@@ -54,6 +54,12 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase; }
+  @media only screen and (max-width: 650px) {
+    .heading__primary {
+      font-size: 6rem; } }
+  @media only screen and (max-width: 450px) {
+    .heading__primary {
+      font-size: 5rem; } }
 
 .heading__secondary {
   font-size: 5rem;
@@ -62,6 +68,9 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 2.5rem; }
+  @media only screen and (max-width: 1280px) {
+    .heading__secondary {
+      font-size: 4rem; } }
 
 .text--normal {
   color: var(--color-very-dark-gray); }
@@ -72,11 +81,14 @@ body {
   text-transform: uppercase;
   font-size: 4rem;
   line-height: 4rem; }
+  @media only screen and (max-width: 1280px) {
+    .products__caption {
+      font-size: 3rem; } }
 
 body {
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
-  grid-template-rows: 75vh 85vh max-content min-content; }
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(4rem, 1fr);
+  grid-template-rows: 75vh min-content max-content min-content; }
 
 .header {
   grid-column: 1/-1; }
@@ -100,8 +112,9 @@ body {
   background-repeat: no-repeat;
   background-position: right;
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
-  grid-template-rows: 26vh auto; }
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(4rem, 1fr);
+  grid-template-rows: 26vh auto;
+  min-height: 75vh; }
   .header-nav {
     width: 100%;
     grid-column: 2/6;
@@ -111,6 +124,9 @@ body {
     align-items: center; }
     .header-nav__list {
       display: flex; }
+      @media only screen and (max-width: 900px) {
+        .header-nav__list {
+          display: none; } }
     .header-nav__link {
       display: inline-block;
       color: var(--color-white);
@@ -122,23 +138,49 @@ body {
     height: min-content;
     padding: 3rem 4rem;
     min-width: 66rem; }
+    @media only screen and (max-width: 650px) {
+      .header__title {
+        grid-column: 2/6;
+        min-width: auto;
+        width: 100%; } }
 
 .about {
   position: relative;
-  margin: 12rem 0; }
+  margin: 12rem 0;
+  min-height: 40rem; }
+  @media only screen and (max-width: 850px) {
+    .about {
+      width: 100%;
+      min-height: auto; } }
   .about__img {
     display: block;
-    width: 65%;
+    width: 70%;
     height: 100%;
     object-fit: cover; }
+    @media only screen and (max-width: 1050px) {
+      .about__img {
+        width: 75%; } }
+    @media only screen and (max-width: 850px) {
+      .about__img {
+        width: 100%;
+        height: auto; } }
   .about__content {
     position: absolute;
     bottom: 0;
-    left: 51%;
-    width: 60%;
+    left: 55%;
+    width: 45%;
     align-self: flex-end;
     background-color: var(--color-white);
-    padding: 10rem 10rem 0 10rem; }
+    padding: 10rem 0 0 10rem; }
+    @media only screen and (max-width: 1200px) {
+      .about__content {
+        padding: 7rem 0 0 7rem; } }
+    @media only screen and (max-width: 850px) {
+      .about__content {
+        width: 100%;
+        position: relative;
+        left: 0;
+        padding: 6rem 3rem 0 3rem; } }
 
 .btn {
   text-transform: uppercase;
@@ -163,6 +205,22 @@ body {
     grid-gap: 4rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 52rem 52rem; }
+    @media only screen and (max-width: 1340px) {
+      .products__list {
+        grid-gap: 2rem; } }
+    @media only screen and (max-width: 1150px) {
+      .products__list {
+        grid-gap: 1.5rem; } }
+    @media only screen and (max-width: 850px) {
+      .products__list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 64rem 64rem 64rem;
+        grid-gap: 4rem; } }
+    @media only screen and (max-width: 550px) {
+      .products__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 25rem);
+        grid-gap: 3rem; } }
   .products__item {
     position: relative;
     height: 100%; }
@@ -170,6 +228,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+    @media only screen and (max-width: 550px) {
+      .products__image {
+        object-position: top; } }
   .products__caption {
     position: absolute;
     top: 0;
@@ -179,34 +240,72 @@ body {
     align-items: flex-end;
     padding: 4rem;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6)); }
+    @media only screen and (max-width: 1280px) {
+      .products__caption {
+        padding: 3rem; } }
 
 .footer {
   background-color: var(--color-black);
   color: var(--color-white);
   display: grid;
-  grid-template-columns: 1fr repeat(4, 35rem) 1fr;
+  grid-template-columns: minmax(4rem, 1fr) repeat(4, minmax(min-content, 35rem)) minmax(4rem, 1fr);
   align-content: center;
   row-gap: 2.5rem;
   padding: 4rem 0; }
+  @media only screen and (max-width: 700px) {
+    .footer {
+      justify-items: center;
+      row-gap: 1rem; } }
   .footer__logo {
-    grid-column: 2/4; }
+    grid-column: 2/4;
+    order: 1; }
+    @media only screen and (max-width: 700px) {
+      .footer__logo {
+        grid-column: 2/6;
+        margin-bottom: 2.5rem; } }
   .footer-nav {
     grid-column: 2/4;
-    display: flex; }
+    display: flex;
+    order: 3; }
+    @media only screen and (max-width: 700px) {
+      .footer-nav {
+        order: 2;
+        margin-bottom: 4rem; } }
     .footer-nav__item:not(:last-child) {
       margin-right: 3rem; }
+      @media only screen and (max-width: 700px) {
+        .footer-nav__item:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 2rem; } }
     .footer-nav__link {
       display: inline-block;
       color: var(--color-white);
       font-weight: bold; }
+    @media only screen and (max-width: 700px) {
+      .footer-nav {
+        grid-column: 2/6;
+        flex-direction: column;
+        text-align: center; } }
   .footer__text {
     grid-column: 4/6;
     text-align: end;
-    color: var(--color-dark-gray); }
+    color: var(--color-dark-gray);
+    order: 4; }
+    @media only screen and (max-width: 700px) {
+      .footer__text {
+        grid-column: 2/6;
+        text-align: center; } }
 
 .social {
   grid-column: 4/6;
   display: flex;
   justify-content: flex-end; }
+  @media only screen and (max-width: 700px) {
+    .social {
+      order: 3; } }
+  @media only screen and (max-width: 700px) {
+    .social {
+      grid-column: 2/6;
+      justify-content: center; } }
   .social__item {
     padding: 0 0.8rem; }
