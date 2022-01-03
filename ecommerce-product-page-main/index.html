@@ -18,6 +18,7 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
+        display: none;
         font-size: 11px;
         text-align: center;
       }
@@ -25,6 +26,8 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
+    <script src="script.js" defer></script>
+    <script src="cart.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -56,7 +59,7 @@
         <img src="./images/image-avatar.png" alt="" class="header__user" />
       </header>
 
-      <main class="product">
+      <main class="product" id="prod-1">
         <div class="product__imgs">
           <img
             src="./images/image-product-1.jpg"
@@ -83,17 +86,18 @@
 
           <div class="product__actions">
             <div class="counter">
-              <button class="counter__minus">
+              <button class="counter__minus" data-remove>
                 <img src="./images/icon-minus.svg" alt="" />
               </button>
-              <span class="counter__value">0</span>
-              <button class="counter__plus">
+              <span class="counter__value" id="amount">0</span>
+              <button class="counter__plus" data-add>
                 <img src="./images/icon-plus.svg" alt="" />
               </button>
             </div>
-            <button class="btn product__add">
-              <img src="./images/icon-cart.svg" alt="">
-              Add to cart</button>
+            <button class="btn product__add" data-add>
+              <img src="./images/icon-cart.svg" alt="" />
+              Add to cart
+            </button>
           </div>
         </div>
       </main>

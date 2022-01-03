@@ -6,7 +6,7 @@
 .product {
   padding: 8rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
 
   & > * {
     padding: 0 6rem;
@@ -61,5 +61,39 @@
   &__plus,
   &__minus {
     color: var(--color-primary);
+  }
+}
+
+.slides {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  & div {
+    width: 21%;
+    overflow: hidden;
+    border-radius: 1rem;
+
+    &:hover {
+      border: 2px solid var(--color-primary);
+    }
+
+    &:has(.slides__img--active) {
+      border: 2px solid var(--color-primary);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+
+    &:hover {
+      cursor: pointer;
+      filter: opacity(0.3);
+    }
+
+    &--active {
+      filter: opacity(0.3);
+    }
   }
 }
