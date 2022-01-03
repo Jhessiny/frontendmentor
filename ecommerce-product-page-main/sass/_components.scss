@@ -1,0 +1,65 @@
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.product {
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  & > * {
+    padding: 0 6rem;
+  }
+
+  &__main-img {
+    width: 100%;
+    border-radius: 2.5rem;
+  }
+
+  &__details {
+    align-self: center;
+  }
+
+  &__price {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+  }
+
+  &__discount {
+    background-color: var(--color-primary-pale);
+    border-radius: 3px;
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__add {
+    flex: 1;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+}
+
+.counter {
+  background-color: var(--color-light-grayish-blue);
+  margin-right: 1.5rem;
+  border-radius: 0.8rem;
+
+  & > * {
+    background-color: transparent;
+    border: none;
+    padding: 1.8rem;
+    font-weight: 700;
+  }
+  &__plus,
+  &__minus {
+    color: var(--color-primary);
+  }
+}
