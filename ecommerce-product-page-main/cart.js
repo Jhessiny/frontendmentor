@@ -7,11 +7,11 @@ class Product {
     this.element = document.querySelector(`#${id}`);
   }
 
+  fillUi() {}
+
   updateUi() {
     this.amount = cart.getProduct(this.id)[0]?.amount;
-    if (this.amount)
-      this.element.querySelector("#amount").textContent = this.amount;
-    else this.element.querySelector("#amount").textContent = 0;
+    this.element.querySelector("#amount").textContent = this.amount ?? 0;
   }
 }
 
